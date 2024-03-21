@@ -10,6 +10,7 @@ import { formatCurrency } from "../../utils/formatting";
 import interactionPlugin, { DateClickArg } from "@fullcalendar/interaction";
 import { useTheme } from "@mui/material";
 import { isSameMonth } from "date-fns";
+import { Height } from "@mui/icons-material";
 
 interface CalendarProps {
   monthlyTransactions: Transaction[];
@@ -107,6 +108,7 @@ const Calendar = ({
       eventContent={renderEvent}
       datesSet={handleDateSet}
       dateClick={handleDateClick}
+      contentHeight="auto"
     />
   );
 };
