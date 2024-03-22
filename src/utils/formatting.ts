@@ -1,7 +1,12 @@
 import { format } from "date-fns";
 
+//年と月を取得
 export function formatMonth(date: Date): string {
   return format(date, "yyyy-MM");
+}
+//年を取得
+export function formatYear(date: Date): string {
+  return format(date, "yyyy");
 }
 
 //日本円に変換する関数

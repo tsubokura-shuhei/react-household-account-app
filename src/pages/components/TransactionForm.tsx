@@ -23,6 +23,8 @@ import AddHomeIcon from "@mui/icons-material/AddHome";
 import Diversity3Icon from "@mui/icons-material/Diversity3";
 import SportsTennisIcon from "@mui/icons-material/SportsTennis";
 import TrainIcon from "@mui/icons-material/Train";
+import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
+import MedicationIcon from "@mui/icons-material/Medication";
 import WorkIcon from "@mui/icons-material/Work";
 import SavingsIcon from "@mui/icons-material/Savings";
 import AddBusinessIcon from "@mui/icons-material/AddBusiness";
@@ -82,6 +84,8 @@ const TransactionForm = ({
     { label: "交際費", icon: <Diversity3Icon fontSize="small" /> },
     { label: "娯楽", icon: <SportsTennisIcon fontSize="small" /> },
     { label: "交通費", icon: <TrainIcon fontSize="small" /> },
+    { label: "医療費", icon: <MedicationIcon fontSize="small" /> },
+    { label: "化粧品", icon: <AutoFixHighIcon fontSize="small" /> },
   ];
 
   const incomeCategories: CategoryItem[] = [
@@ -181,8 +185,8 @@ const TransactionForm = ({
       const categoryExists = categories.some(
         (category) => category.label === selectedTransaction.category
       );
-      console.log(categories, "categories");
-      console.log(categoryExists, "categoryExists");
+      // console.log(categories, "categories");
+      // console.log(categoryExists, "categoryExists");
       setValue("category", categoryExists ? selectedTransaction.category : "");
     }
   }, [selectedTransaction, categories]);

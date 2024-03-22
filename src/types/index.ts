@@ -9,7 +9,9 @@ export type ExpenseCategory =
   | "住居費"
   | "交際費"
   | "娯楽"
-  | "交通費";
+  | "交通費"
+  | "医療費"
+  | "化粧品";
 
 export interface Transaction {
   id: string;

@@ -45,7 +45,7 @@ const Calendar = ({
 
   //日付ごとの支出を算出
   const dailyBalances = calculateDailyBalances(monthlyTransactions);
-  console.log(dailyBalances);
+  // console.log(dailyBalances);
 
   //2.FullCalendar用のイベントを生成する関数
   const createCalendarEvents = (

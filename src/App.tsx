@@ -3,11 +3,18 @@ import "./App.css";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Report from "./pages/Report";
+import Yearly from "./pages/Yearly";
+
 import NoMatch from "./pages/NoMatch";
 import AppLayout from "./pages/components/layout/AppLayout";
 import { theme } from "./theme/theme";
 import { ThemeProvider } from "@emotion/react";
-import { CssBaseline, selectClasses } from "@mui/material";
+import {
+  CssBaseline,
+  selectClasses,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { Transaction } from "./types/index";
 
 import {
@@ -20,7 +27,7 @@ import {
 } from "firebase/firestore";
 import { db } from "./firebase";
 import { format } from "date-fns";
-import { formatMonth } from "./utils/formatting";
+import { formatMonth, formatYear } from "./utils/formatting";
 import { Schema } from "./validations/schema";
 
 function App() {
@@ -29,6 +36,9 @@ function App() {
 
   // 今月のデータを管理するState
   const [currentMonth, setCurrentMonth] = useState(new Date());
+
+  //年間のデータを管理するState
+  const [currentYear, setCurrentYear] = useState(new Date());
 
   //ローディング管理
   const [isLoading, setIsLoading] = useState(true);
@@ -73,6 +83,11 @@ function App() {
     return allDate.date.startsWith(formatMonth(currentMonth));
   });
 
+  //今年のデータを取得
+  const yearTransactions = transaction.filter((allData) => {
+    return allData.date.startsWith(formatYear(currentYear));
+  });
+
   //取引を保存する処理
   const handleSaveTransaction = async (transactionData: Schema) => {
     try {
@@ -98,8 +113,6 @@ function App() {
       }
     }
   };
-
-  // console.log(monthlyTransactions);
 
   const handleDeleteTransaction = async (
     transactionIds: string | readonly string[]
@@ -167,6 +180,7 @@ function App() {
       <CssBaseline />
       <Router>
         <Routes>
+          {/* ホーム */}
           <Route path="/" element={<AppLayout />}>
             <Route
               index
@@ -180,6 +194,7 @@ function App() {
                 />
               }
             />
+            {/* 月々の合計 */}
             <Route
               path="/report"
               element={
@@ -192,6 +207,20 @@ function App() {
                 />
               }
             />
+            {/* 年間の合計 */}
+            <Route
+              path="/yearly"
+              element={
+                <Yearly
+                  currentYear={currentYear}
+                  setCurrentYear={setCurrentYear}
+                  isLoading={isLoading}
+                  onDeleteTransaction={handleDeleteTransaction}
+                  yearTransactions={yearTransactions}
+                />
+              }
+            />
+            {/* ページが存在しない場合 */}
             <Route path="*" element={<NoMatch />} />
           </Route>
         </Routes>
