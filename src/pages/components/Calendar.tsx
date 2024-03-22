@@ -69,6 +69,7 @@ const Calendar = ({
     display: "background",
     backgroundColor: theme.palette.incomeColor.light,
   };
+  console.log(backgroundEvent);
 
   const renderEvent = (eventInfo: EventContentArg) => {
     return (
