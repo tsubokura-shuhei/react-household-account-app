@@ -8,6 +8,8 @@ import {
   ListItemIcon,
   ListItemText,
   Toolbar,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import React, { CSSProperties } from "react";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
@@ -15,6 +17,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import HomeIcon from "@mui/icons-material/Home";
 import EqualizerIcon from "@mui/icons-material/Equalizer";
 import { NavLink } from "react-router-dom";
+import BalanceIcon from "@mui/icons-material/Balance";
 
 interface SideBarProps {
   drawerWidth: number;
@@ -36,8 +39,9 @@ const SideBar = ({
   handleDrawerClose,
 }: SideBarProps) => {
   const MenuItems: menuItem[] = [
-    { text: "Home", path: "/", icon: HomeIcon },
-    { text: "Report", path: "/report", icon: EqualizerIcon },
+    { text: "ホーム", path: "/", icon: HomeIcon },
+    { text: "月々の合計", path: "/report", icon: EqualizerIcon },
+    { text: "年間の合計", path: "/yearly", icon: BalanceIcon },
   ];
 
   const baseLinkStyle: CSSProperties = {
@@ -48,6 +52,16 @@ const SideBar = ({
 
   const activeLinkStyle: CSSProperties = {
     backgroundColor: "rgba(0,0,0,0.08)",
+  };
+
+  //ウィンドウ幅が1200px以下になったときに適応させる
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
+
+  const handleMenuMobile = () => {
+    if (isMobile) {
+      handleDrawerClose();
+    }
   };
 
   const drawer = (
@@ -63,6 +77,7 @@ const SideBar = ({
               // console.log("選択されたメニューは", item.text, isActive);
               return { ...baseLinkStyle, ...(isActive ? activeLinkStyle : {}) };
             }}
+            onClick={handleMenuMobile}
           >
             <ListItem key={index} disablePadding>
               <ListItemButton>
@@ -86,6 +101,7 @@ const SideBar = ({
         sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 } }}
         aria-label="mailbox folders"
       >
+        {/* スマホのdrawer */}
         <Drawer
           variant="temporary"
           open={mobileOpen}
@@ -104,6 +120,7 @@ const SideBar = ({
         >
           {drawer}
         </Drawer>
+        {/* PCのdrawer */}
         <Drawer
           variant="permanent"
           sx={{

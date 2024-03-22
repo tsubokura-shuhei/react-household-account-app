@@ -73,6 +73,8 @@ export const theme = createTheme({
       交際費: pink[300],
       娯楽: cyan[200],
       交通費: purple[400],
+      医療費: purple[400],
+      化粧品: purple[400],
     },
   },
 });

@@ -20,6 +20,7 @@ import DailySummary from "./DailySummary";
 import { Transaction } from "../../types";
 import { formatCurrency } from "../../utils/formatting";
 import IconComponents from "./common/IconComponents";
+import { format } from "date-fns";
 
 interface TransactionMenuProps {
   dailyTransactions: Transaction[];
@@ -71,7 +72,7 @@ const TransactionMenu = ({
     >
       <Stack sx={{ height: "100%" }} spacing={2}>
         <Typography fontWeight={"fontWeightBold"}>
-          日時： {currentDay}
+          日付： {currentDay}
         </Typography>
         <DailySummary
           dailyTransactions={dailyTransactions}

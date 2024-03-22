@@ -12,7 +12,16 @@ export const transactionScheme = z.object({
 
   category: z
     .union([
-      z.enum(["食費", "日用品", "住居費", "交際費", "娯楽", "交通費"]),
+      z.enum([
+        "食費",
+        "日用品",
+        "住居費",
+        "交際費",
+        "娯楽",
+        "交通費",
+        "医療費",
+        "化粧品",
+      ]),
       z.enum(["給与", "副収入", "お小遣い"]),
       z.literal(""),
     ])

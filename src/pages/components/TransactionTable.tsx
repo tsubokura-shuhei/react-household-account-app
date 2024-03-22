@@ -355,6 +355,7 @@ export default function TransactionTable({
           page={page}
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
+          labelRowsPerPage="1ページあたりの表示数"
         />
       </Paper>
       {/* <FormControlLabel

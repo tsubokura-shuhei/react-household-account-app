@@ -29,7 +29,7 @@ const Home = ({
   onDeleteTransaction,
   onUpdateTransaction,
 }: HomeProps) => {
-  const today = format(new Date(), "yyy-MM-dd");
+  const today = format(new Date(), "yyyy-MM-dd");
   const [currentDay, setCurrentDay] = useState(today);
   const [isEntryDrawerOpen, setIsEntryDrawerOpen] = useState(false);
   const [selectedTransaction, setSelectedTransaction] =
