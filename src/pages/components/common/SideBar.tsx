@@ -14,7 +14,7 @@ import {
 import React, { CSSProperties } from "react";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
-import HomeIcon from "@mui/icons-material/Home";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import EqualizerIcon from "@mui/icons-material/Equalizer";
 import { NavLink } from "react-router-dom";
 import BalanceIcon from "@mui/icons-material/Balance";
@@ -39,7 +39,7 @@ const SideBar = ({
   handleDrawerClose,
 }: SideBarProps) => {
   const MenuItems: menuItem[] = [
-    { text: "ホーム", path: "/", icon: HomeIcon },
+    { text: "カレンダー", path: "/", icon: CalendarMonthIcon },
     { text: "月々の合計", path: "/report", icon: EqualizerIcon },
     { text: "年間の合計", path: "/yearly", icon: BalanceIcon },
   ];
