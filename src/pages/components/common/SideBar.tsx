@@ -17,7 +17,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import EqualizerIcon from "@mui/icons-material/Equalizer";
 import { NavLink } from "react-router-dom";
-import BalanceIcon from "@mui/icons-material/Balance";
+import ImportContactsIcon from "@mui/icons-material/ImportContacts";
 
 interface SideBarProps {
   drawerWidth: number;
@@ -41,7 +41,7 @@ const SideBar = ({
   const MenuItems: menuItem[] = [
     { text: "カレンダー", path: "/", icon: CalendarMonthIcon },
     { text: "月々の合計", path: "/report", icon: EqualizerIcon },
-    { text: "年間の合計", path: "/yearly", icon: BalanceIcon },
+    { text: "年間の合計", path: "/yearly", icon: ImportContactsIcon },
   ];
 
   const baseLinkStyle: CSSProperties = {

@@ -133,7 +133,7 @@ function FinancialItem({ title, value, color }: FinancialItemProps) {
           wordBreak: "break-word",
         }}
       >
-        ¥{value}
+        {value}円
       </Typography>
     </Grid>
   );
@@ -325,7 +325,9 @@ export default function TransactionTable({
                       {IconComponents[transactionDate.category]}
                       {transactionDate.category}
                     </TableCell>
-                    <TableCell align="left">{transactionDate.amount}</TableCell>
+                    <TableCell align="left">
+                      {formatCurrency(transactionDate.amount)}円
+                    </TableCell>
                     <TableCell align="left">
                       {transactionDate.content}
                     </TableCell>
