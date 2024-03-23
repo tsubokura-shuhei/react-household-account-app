@@ -32,7 +32,7 @@ const DailySummary = ({ dailyTransactions, columns }: DailySummaryProps) => {
                 fontWeight="fontWeightBold"
                 sx={{ wordBreak: "break-all" }}
               >
-                ¥{formatCurrency(income)}
+                {formatCurrency(income)}円
               </Typography>
             </CardContent>
           </Card>
@@ -52,7 +52,7 @@ const DailySummary = ({ dailyTransactions, columns }: DailySummaryProps) => {
                 fontWeight="fontWeightBold"
                 sx={{ wordBreak: "break-all" }}
               >
-                ¥{formatCurrency(expense)}
+                {formatCurrency(expense)}円
               </Typography>
             </CardContent>
           </Card>
@@ -72,7 +72,7 @@ const DailySummary = ({ dailyTransactions, columns }: DailySummaryProps) => {
                 fontWeight="fontWeightBold"
                 sx={{ wordBreak: "break-all" }}
               >
-                ¥{formatCurrency(balance)}
+                {formatCurrency(balance)}円
               </Typography>
             </CardContent>
           </Card>

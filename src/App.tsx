@@ -82,6 +82,9 @@ function App() {
   const monthlyTransactions = transaction.filter((allDate) => {
     return allDate.date.startsWith(formatMonth(currentMonth));
   });
+  // console.log(monthlyTransactions, "選択した月の金額リスト");
+  // console.log(currentMonth, "選択中の月");
+  // console.log(transaction, "年間の金額リスト");
 
   //今年のデータを取得
   const yearTransactions = transaction.filter((allData) => {
@@ -217,6 +220,7 @@ function App() {
                   isLoading={isLoading}
                   onDeleteTransaction={handleDeleteTransaction}
                   yearTransactions={yearTransactions}
+                  monthlyTransactions={monthlyTransactions}
                 />
               }
             />

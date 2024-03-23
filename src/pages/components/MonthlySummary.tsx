@@ -30,7 +30,7 @@ const MonthlySummary = ({ monthlyTransactions }: MonthlySummaryProps) => {
           <CardContent sx={{ padding: { xs: 1, sm: 2 } }}>
             <Stack direction={"row"}>
               <ArrowUpwardIcon sx={{ fontSize: "2rem" }} />
-              <Typography>収入</Typography>
+              <Typography fontWeight="bold">収入</Typography>
             </Stack>
             <Typography
               textAlign={"right"}
@@ -41,7 +41,7 @@ const MonthlySummary = ({ monthlyTransactions }: MonthlySummaryProps) => {
                 fontSize: { xs: ".8rem", sm: "1rem", md: "1.2rem" },
               }}
             >
-              ¥{formatCurrency(income)}
+              {formatCurrency(income)}円
             </Typography>
           </CardContent>
         </Card>
@@ -60,7 +60,7 @@ const MonthlySummary = ({ monthlyTransactions }: MonthlySummaryProps) => {
           <CardContent sx={{ padding: { xs: 1, sm: 2 } }}>
             <Stack direction={"row"}>
               <ArrowDownwardIcon sx={{ fontSize: "2rem" }} />
-              <Typography>支出</Typography>
+              <Typography fontWeight="bold">支出</Typography>
             </Stack>
             <Typography
               textAlign={"right"}
@@ -75,7 +75,7 @@ const MonthlySummary = ({ monthlyTransactions }: MonthlySummaryProps) => {
                 },
               }}
             >
-              ¥{formatCurrency(expense)}
+              {formatCurrency(expense)}円
             </Typography>
           </CardContent>
         </Card>
@@ -94,7 +94,7 @@ const MonthlySummary = ({ monthlyTransactions }: MonthlySummaryProps) => {
           <CardContent sx={{ padding: { xs: 1, sm: 2 } }}>
             <Stack direction={"row"}>
               <AccountBalanceIcon sx={{ fontSize: "2rem" }} />
-              <Typography>残高</Typography>
+              <Typography fontWeight="bold">残高</Typography>
             </Stack>
             <Typography
               textAlign={"right"}
@@ -105,7 +105,7 @@ const MonthlySummary = ({ monthlyTransactions }: MonthlySummaryProps) => {
                 fontSize: { xs: ".8rem", sm: "1rem", md: "1.2rem" },
               }}
             >
-              ¥{formatCurrency(balance)}
+              {formatCurrency(balance)}円
             </Typography>
           </CardContent>
         </Card>

@@ -45,17 +45,17 @@ export const theme = createTheme({
   },
   palette: {
     incomeColor: {
-      main: blue[500],
+      main: blue[600],
       light: blue[100],
       dark: blue[700],
     },
     expenseColor: {
-      main: red[500],
+      main: red[600],
       light: red[100],
       dark: red[700],
     },
     balanceColor: {
-      main: green[500],
+      main: green[600],
       light: green[100],
       dark: green[700],
     },
