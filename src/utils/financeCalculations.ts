@@ -1,4 +1,6 @@
-import { Balance, Transaction } from "../types";
+import { string } from "zod";
+import { Balance, Transaction, Year } from "../types";
+import { formatYear } from "./formatting";
 
 export function financeCalculations(transactions: Transaction[]): Balance {
   return transactions.reduce(
@@ -9,7 +11,6 @@ export function financeCalculations(transactions: Transaction[]): Balance {
         acc.expense += transaction.amount;
       }
       acc.balance = acc.income - acc.expense;
-
       return acc;
     },
     {

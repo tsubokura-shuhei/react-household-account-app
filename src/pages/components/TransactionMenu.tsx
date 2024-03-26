@@ -6,6 +6,7 @@ import {
   CardContent,
   Drawer,
   Grid,
+  IconButton,
   List,
   ListItem,
   Stack,
@@ -20,6 +21,7 @@ import DailySummary from "./DailySummary";
 import { Transaction } from "../../types";
 import { formatCurrency } from "../../utils/formatting";
 import IconComponents from "./common/IconComponents";
+import CloseIcon from "@mui/icons-material/Close"; // 閉じるボタン用のアイコン
 import { format } from "date-fns";
 
 interface TransactionMenuProps {
@@ -71,9 +73,24 @@ const TransactionMenu = ({
       }}
     >
       <Stack sx={{ height: "100%" }} spacing={2}>
-        <Typography fontWeight={"fontWeightBold"}>
-          日付： {currentDay}
-        </Typography>
+        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Typography
+            fontWeight={"fontWeightBold"}
+            sx={{ display: "flex", alignItems: "center" }}
+          >
+            日付： {currentDay}
+          </Typography>
+          {/* 閉じるボタン */}
+          <IconButton
+            sx={{
+              color: (theme) => theme.palette.grey[500],
+            }}
+            onClick={handleCloseMobileDrawer}
+          >
+            <CloseIcon />
+          </IconButton>
+        </Box>
+
         <DailySummary
           dailyTransactions={dailyTransactions}
           columns={isMobile ? 3 : 2}

@@ -48,12 +48,14 @@ const BarChart = ({ monthlyTransactions, isLoading }: BarChartProps) => {
 
   //日付ごとの収支の算出
   const dailyBalances = calculateDailyBalances(monthlyTransactions);
+  // console.log(monthlyTransactions);
   // console.log(dailyBalances);
   // console.log(dailyBalances);
   // console.log(monthlyTransactions, "1ヶ月分の取引データ");
 
   //ラベル（日付）を配列へ格納
   const dateLabels = Object.keys(dailyBalances).sort();
+  // console.log(dailyBalances);
 
   //日付ごとの支出を配列へ格納
   const expenseData = dateLabels.map((day) => dailyBalances[day].expense);

@@ -15,7 +15,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { Transaction } from "./types/index";
+import { Transaction, Year } from "./types/index";
 
 import {
   collection,
@@ -27,7 +27,7 @@ import {
 } from "firebase/firestore";
 import { db } from "./firebase";
 import { format } from "date-fns";
-import { formatMonth, formatYear } from "./utils/formatting";
+import { formatMonth, formatMonthly, formatYear } from "./utils/formatting";
 import { Schema } from "./validations/schema";
 
 function App() {
@@ -85,6 +85,7 @@ function App() {
   // console.log(monthlyTransactions, "選択した月の金額リスト");
   // console.log(currentMonth, "選択中の月");
   // console.log(transaction, "年間の金額リスト");
+  // console.log(formatMonth(currentMonth));
 
   //今年のデータを取得
   const yearTransactions = transaction.filter((allData) => {
@@ -221,6 +222,7 @@ function App() {
                   onDeleteTransaction={handleDeleteTransaction}
                   yearTransactions={yearTransactions}
                   monthlyTransactions={monthlyTransactions}
+                  transaction={transaction}
                 />
               }
             />
