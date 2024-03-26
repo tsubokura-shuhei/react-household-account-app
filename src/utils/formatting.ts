@@ -4,6 +4,10 @@ import { format } from "date-fns";
 export function formatMonth(date: Date): string {
   return format(date, "yyyy-MM");
 }
+//月を取得
+export function formatMonthly(date: Date): string {
+  return format(date, "MM");
+}
 //年を取得
 export function formatYear(date: Date): string {
   return format(date, "yyyy");

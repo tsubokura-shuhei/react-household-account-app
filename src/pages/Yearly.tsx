@@ -13,12 +13,15 @@ import BarChart from "./components/BarChart";
 import TransactionTable from "./components/TransactionTable";
 import { Transaction } from "../types";
 import YearSelector from "./components/YearSelector";
-import BarChartYear from "./components/BarChartYear";
+import BarChartYear from "./components/BarChartYearExpence";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import { financeCalculations } from "../utils/financeCalculations";
 import { formatCurrency } from "../utils/formatting";
+import BarChartYearExpence from "./components/BarChartYearExpence";
+import BarChartYearIncome from "./components/BarChartYearIncome";
+import CategoryChartYear from "./components/CategoryChartYear";
 
 interface ReportProps {
   currentYear: Date;
@@ -29,6 +32,7 @@ interface ReportProps {
   ) => Promise<void>;
   yearTransactions: Transaction[];
   monthlyTransactions: Transaction[];
+  transaction: Transaction[];
 }
 
 const Yearly = ({
@@ -38,6 +42,7 @@ const Yearly = ({
   onDeleteTransaction,
   yearTransactions,
   monthlyTransactions,
+  transaction,
 }: ReportProps) => {
   const commonPaperStyle = {
     height: "400px",
@@ -45,10 +50,15 @@ const Yearly = ({
     flexDirection: "column",
     p: 2,
   };
+  const cardStyle = {
+    height: "auto",
+    display: "flex",
+    flexDirection: "column",
+    p: 2,
+  };
 
   //年間の合計データ
   const { income, expense, balance } = financeCalculations(yearTransactions);
-  // console.log(financeCalculations(monthlyTransactions));
   return (
     <Grid container spacing={2}>
       <Grid item xs={12} mb={2}>
@@ -156,21 +166,38 @@ const Yearly = ({
           </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={12} md={4}>
-        <Paper sx={commonPaperStyle}>
-          {/* 円グラフ */}
-          {/* <CategoryChart
-            yearTransactions={yearTransactions}
-            isLoading={isLoading}
-          /> */}
-        </Paper>
-      </Grid>
-      <Grid item xs={12} md={8}>
+
+      <Grid item xs={12}>
         <Paper sx={commonPaperStyle}>
           {/* 棒グラフ */}
-          <BarChartYear
+          <BarChartYearIncome
             yearTransactions={yearTransactions}
             isLoading={isLoading}
+            transaction={transaction}
+            currentYear={currentYear}
+          />
+        </Paper>
+      </Grid>
+      <Grid item xs={12}>
+        <Paper sx={commonPaperStyle}>
+          {/* 棒グラフ */}
+          <BarChartYearExpence
+            yearTransactions={yearTransactions}
+            isLoading={isLoading}
+            transaction={transaction}
+            currentYear={currentYear}
+          />
+        </Paper>
+      </Grid>
+      {/* カード */}
+      <Grid item xs={12}>
+        <Paper sx={cardStyle}>
+          <CategoryChartYear
+            monthlyTransactions={monthlyTransactions}
+            isLoading={isLoading}
+            transaction={transaction}
+            yearTransactions={yearTransactions}
+            currentYear={currentYear}
           />
         </Paper>
       </Grid>

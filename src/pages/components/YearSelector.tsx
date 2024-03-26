@@ -4,6 +4,8 @@ import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFnsV3";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { addYears } from "date-fns";
 import { ja } from "date-fns/locale";
+import { Transaction, Year } from "../../types";
+import { formatYear } from "../../utils/formatting";
 
 interface MonthProps {
   currentYear: Date;
