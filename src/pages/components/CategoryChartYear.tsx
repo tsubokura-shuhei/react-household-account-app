@@ -148,6 +148,11 @@ const CategoryChartYear = ({
             <MenuItem value={"交通費"}>交通費</MenuItem>
             <MenuItem value={"医療費"}>医療費</MenuItem>
             <MenuItem value={"化粧品"}>化粧品</MenuItem>
+            <MenuItem value={"カード払い"}>カード払い</MenuItem>
+            <MenuItem value={"保険類"}>保険類</MenuItem>
+            <MenuItem value={"衣類"}>衣類</MenuItem>
+            <MenuItem value={"光熱費"}>光熱費</MenuItem>
+            <MenuItem value={"ガソリン代"}>ガソリン代</MenuItem>
           </Select>
         </FormControl>
       </Box>

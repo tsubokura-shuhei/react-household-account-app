@@ -11,7 +11,12 @@ export type ExpenseCategory =
   | "娯楽"
   | "交通費"
   | "医療費"
-  | "化粧品";
+  | "化粧品"
+  | "カード払い"
+  | "保険類"
+  | "衣類"
+  | "光熱費"
+  | "ガソリン代";
 
 export interface Transaction {
   id: string;

@@ -81,14 +81,20 @@ const TransactionMenu = ({
             日付： {currentDay}
           </Typography>
           {/* 閉じるボタン */}
-          <IconButton
-            sx={{
-              color: (theme) => theme.palette.grey[500],
-            }}
-            onClick={handleCloseMobileDrawer}
-          >
-            <CloseIcon />
-          </IconButton>
+          {isMobile ? (
+            <>
+              <IconButton
+                sx={{
+                  color: (theme) => theme.palette.grey[500],
+                }}
+                onClick={handleCloseMobileDrawer}
+              >
+                <CloseIcon />
+              </IconButton>
+            </>
+          ) : (
+            <></>
+          )}
         </Box>
 
         <DailySummary

@@ -26,6 +26,7 @@ import {
 } from "../../types";
 import { object } from "zod";
 import CircularProgress from "@mui/material/CircularProgress";
+import { financeCalculations } from "../../utils/financeCalculations";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -87,6 +88,11 @@ const CategoryChart = ({ monthlyTransactions, isLoading }: categoryProps) => {
     交通費: theme.palette.expenseCategoryColor.交通費,
     医療費: theme.palette.expenseCategoryColor.医療費,
     化粧品: theme.palette.expenseCategoryColor.化粧品,
+    カード払い: theme.palette.expenseCategoryColor.カード払い,
+    保険類: theme.palette.expenseCategoryColor.保険類,
+    衣類: theme.palette.expenseCategoryColor.衣類,
+    光熱費: theme.palette.expenseCategoryColor.光熱費,
+    ガソリン代: theme.palette.expenseCategoryColor.ガソリン代,
   };
 
   //カテゴリーごとに色分けする関数
