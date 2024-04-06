@@ -53,6 +53,7 @@ const Report = ({
           <BarChart
             monthlyTransactions={monthlyTransactions}
             isLoading={isLoading}
+            currentMonth={currentMonth}
           />
         </Paper>
       </Grid>

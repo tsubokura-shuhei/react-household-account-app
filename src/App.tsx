@@ -26,7 +26,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { db } from "./firebase";
-import { format } from "date-fns";
+import { endOfMonth, format, startOfMonth } from "date-fns";
 import { formatMonth, formatMonthly, formatYear } from "./utils/formatting";
 import { Schema } from "./validations/schema";
 

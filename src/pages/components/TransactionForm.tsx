@@ -33,6 +33,12 @@ import { watch } from "fs";
 import { ExpenseCategory, IncomeCategory, Transaction } from "../../types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Schema, transactionScheme } from "../../validations/schema";
+import CreditCardSharpIcon from '@mui/icons-material/CreditCardSharp';
+import EnhancedEncryptionSharpIcon from '@mui/icons-material/EnhancedEncryptionSharp';
+
+import CheckroomIcon from '@mui/icons-material/Checkroom';
+import TungstenIcon from '@mui/icons-material/Tungsten';
+import EvStationIcon from '@mui/icons-material/EvStation';
 
 interface transactionProps {
   onCloseForm: () => void;
@@ -86,6 +92,11 @@ const TransactionForm = ({
     { label: "交通費", icon: <TrainIcon fontSize="small" /> },
     { label: "医療費", icon: <MedicationIcon fontSize="small" /> },
     { label: "化粧品", icon: <AutoFixHighIcon fontSize="small" /> },
+    { label: "カード払い", icon: <CreditCardSharpIcon fontSize="small" /> },
+    { label: "保険類", icon: <EnhancedEncryptionSharpIcon fontSize="small" /> },
+    { label: "衣類", icon: <CheckroomIcon fontSize="small" /> },
+    { label: "光熱費", icon: <TungstenIcon fontSize="small" /> },
+    { label: "ガソリン代", icon: <EvStationIcon fontSize="small" /> },
   ];
 
   const incomeCategories: CategoryItem[] = [
