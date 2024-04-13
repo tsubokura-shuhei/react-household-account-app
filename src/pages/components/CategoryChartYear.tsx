@@ -105,12 +105,6 @@ const CategoryChartYear = ({
   //   return datas;
   // });
 
-  let dataTestArray: Transaction[] = [];
-
-  categorySelectYear.map((datas) => {
-    dataTestArray.push(datas);
-  });
-
   // console.log(dataTestArray);
   // console.log(categorySelectYear);
 
@@ -120,6 +114,13 @@ const CategoryChartYear = ({
 
   const categorySum = Object.values(categorySumsYear);
   let [categoryItem] = categorySum;
+
+  //日付を古い順に並び替え
+  function compareDates(a: Transaction, b: Transaction): number {
+    return new Date(a.date).getTime() - new Date(b.date).getTime();
+  }
+
+  categorySelectYear.sort(compareDates);
 
   return (
     <>
@@ -197,7 +198,7 @@ const CategoryChartYear = ({
       >
         {isLoading ? (
           <CircularProgress />
-        ) : dataTestArray.length > 0 ? (
+        ) : categorySelectYear.length > 0 ? (
           <Box
             sx={{
               display: "flex",
@@ -205,7 +206,7 @@ const CategoryChartYear = ({
               width: "100%",
             }}
           >
-            {dataTestArray.map((data, index) => (
+            {categorySelectYear.map((data, index) => (
               <Card
                 key={index}
                 sx={{

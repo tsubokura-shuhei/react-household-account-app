@@ -87,12 +87,19 @@ const CategoryChartYear = ({
 
   let dataTestArray: Transaction[] = [];
 
-  categorySelectMonth.map((datas, index) => {
+  categorySelectMonth.map((datas) => {
     dataTestArray.push(datas);
   });
 
   const categorySum = Object.values(categorySumsMoth);
   let [categoryItem] = categorySum;
+
+  //日付を古い順に並び替え
+  function compareDates(a: Transaction, b: Transaction): number {
+    return new Date(a.date).getTime() - new Date(b.date).getTime();
+  }
+
+  categorySelectMonth.sort(compareDates);
 
   return (
     <>
@@ -170,7 +177,7 @@ const CategoryChartYear = ({
       >
         {isLoading ? (
           <CircularProgress />
-        ) : dataTestArray.length > 0 ? (
+        ) : categorySelectMonth.length > 0 ? (
           <Box
             sx={{
               display: "flex",
@@ -178,7 +185,7 @@ const CategoryChartYear = ({
               width: "100%",
             }}
           >
-            {dataTestArray.map((data, index) => (
+            {categorySelectMonth.map((data, index) => (
               <Card
                 key={index}
                 sx={{
