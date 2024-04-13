@@ -5,15 +5,18 @@ import CategoryChart from "./components/CategoryChart";
 import BarChart from "./components/BarChart";
 import TransactionTable from "./components/TransactionTable";
 import { Transaction } from "../types";
+import CategoryChartYear from "./components/CategoryChartMonth";
 
 interface ReportProps {
   currentMonth: Date;
   setCurrentMonth: React.Dispatch<React.SetStateAction<Date>>;
   monthlyTransactions: Transaction[];
   isLoading: boolean;
+  transaction: Transaction[];
   onDeleteTransaction: (
     transactionId: string | readonly string[]
   ) => Promise<void>;
+  currentYear: Date;
 }
 
 const Report = ({
@@ -22,9 +25,17 @@ const Report = ({
   monthlyTransactions,
   isLoading,
   onDeleteTransaction,
+  transaction,
+  currentYear,
 }: ReportProps) => {
   const commonPaperStyle = {
     height: "400px",
+    display: "flex",
+    flexDirection: "column",
+    p: 2,
+  };
+  const cardStyle = {
+    height: "auto",
     display: "flex",
     flexDirection: "column",
     p: 2,
@@ -63,6 +74,18 @@ const Report = ({
           monthlyTransactions={monthlyTransactions}
           onDeleteTransaction={onDeleteTransaction}
         />
+      </Grid>
+      {/* カード */}
+      <Grid item xs={12}>
+        <Paper sx={cardStyle}>
+          <CategoryChartYear
+            monthlyTransactions={monthlyTransactions}
+            isLoading={isLoading}
+            transaction={transaction}
+            currentYear={currentYear}
+            currentMonth={currentMonth}
+          />
+        </Paper>
       </Grid>
     </Grid>
   );

@@ -208,6 +208,8 @@ function App() {
                   monthlyTransactions={monthlyTransactions}
                   isLoading={isLoading}
                   onDeleteTransaction={handleDeleteTransaction}
+                  transaction={transaction}
+                  currentYear={currentYear}
                 />
               }
             />
