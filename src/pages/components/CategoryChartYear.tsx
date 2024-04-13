@@ -107,12 +107,8 @@ const CategoryChartYear = ({
 
   let dataTestArray: Transaction[] = [];
 
-  categoryYearDateSort.map((days) => {
-    categorySelectYear.map((datas) => {
-      if (days === datas.date) {
-        dataTestArray.push(datas);
-      }
-    });
+  categorySelectYear.map((datas) => {
+    dataTestArray.push(datas);
   });
 
   // console.log(dataTestArray);

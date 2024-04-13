@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Pie } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -66,12 +66,12 @@ const CategoryChartYear = ({
     setCategoryType(e.target.value as IncomeCategory | ExpenseCategory);
   };
 
-  //今年のカテゴリを選択
+  //毎月のカテゴリを選択
   const categorySelectMonth = monthlyTransactions.filter(
     (data) => data.category === categoryType
   );
 
-  //今年のカテゴリの合計
+  //毎月のカテゴリの合計
   const categorySumsMoth = monthlyTransactions
     .filter((data) => data.category === categoryType)
     .reduce<Record<IncomeCategory | ExpenseCategory, number>>(
@@ -85,20 +85,10 @@ const CategoryChartYear = ({
       {} as Record<IncomeCategory | ExpenseCategory, number>
     );
 
-  const categoryYearDate = categorySelectMonth.map((data) => {
-    return data.date;
-  });
-
-  const categoryYearDateSort = Object.values(categoryYearDate).sort();
-
   let dataTestArray: Transaction[] = [];
 
-  categoryYearDateSort.map((days) => {
-    categorySelectMonth.map((datas) => {
-      if (days === datas.date) {
-        dataTestArray.push(datas);
-      }
-    });
+  categorySelectMonth.map((datas, index) => {
+    dataTestArray.push(datas);
   });
 
   const categorySum = Object.values(categorySumsMoth);
