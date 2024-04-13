@@ -9,13 +9,13 @@ import TrainIcon from "@mui/icons-material/Train";
 import WorkIcon from "@mui/icons-material/Work";
 import SavingsIcon from "@mui/icons-material/Savings";
 import AddBusinessIcon from "@mui/icons-material/AddBusiness";
-import MedicationIcon from '@mui/icons-material/Medication';
-import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
-import CreditCardSharpIcon from '@mui/icons-material/CreditCardSharp';
-import EnhancedEncryptionSharpIcon from '@mui/icons-material/EnhancedEncryptionSharp';
-import CheckroomIcon from '@mui/icons-material/Checkroom';
-import TungstenIcon from '@mui/icons-material/Tungsten';
-import EvStationIcon from '@mui/icons-material/EvStation';
+import MedicationIcon from "@mui/icons-material/Medication";
+import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
+import CreditCardSharpIcon from "@mui/icons-material/CreditCardSharp";
+import EnhancedEncryptionSharpIcon from "@mui/icons-material/EnhancedEncryptionSharp";
+import CheckroomIcon from "@mui/icons-material/Checkroom";
+import TungstenIcon from "@mui/icons-material/Tungsten";
+import YardIcon from "@mui/icons-material/Yard";
 
 const IconComponents: Record<IncomeCategory | ExpenseCategory, JSX.Element> = {
   食費: <FastfoodIcon fontSize="small" />,
@@ -33,7 +33,7 @@ const IconComponents: Record<IncomeCategory | ExpenseCategory, JSX.Element> = {
   保険類: <EnhancedEncryptionSharpIcon fontSize="small" />,
   衣類: <CheckroomIcon fontSize="small" />,
   光熱費: <TungstenIcon fontSize="small" />,
-  ガソリン代: <EvStationIcon fontSize="small" />,
+  農業経費: <YardIcon fontSize="small" />,
 };
 
 export default IconComponents;

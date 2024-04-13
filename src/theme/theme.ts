@@ -79,7 +79,7 @@ export const theme = createTheme({
       保険類: purple[200],
       衣類: cyan[600],
       光熱費: deepOrange[200],
-      ガソリン代: pink[600],
+      農業経費: pink[600],
     },
   },
 });

@@ -25,7 +25,7 @@ export const transactionScheme = z.object({
         "保険類",
         "衣類",
         "光熱費",
-        "ガソリン代",
+        "農業経費",
       ]),
       z.enum(["給与", "副収入", "お小遣い"]),
       z.literal(""),

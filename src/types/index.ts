@@ -16,7 +16,7 @@ export type ExpenseCategory =
   | "保険類"
   | "衣類"
   | "光熱費"
-  | "ガソリン代";
+  | "農業経費";
 
 export interface Transaction {
   id: string;

@@ -92,7 +92,7 @@ const CategoryChart = ({ monthlyTransactions, isLoading }: categoryProps) => {
     保険類: theme.palette.expenseCategoryColor.保険類,
     衣類: theme.palette.expenseCategoryColor.衣類,
     光熱費: theme.palette.expenseCategoryColor.光熱費,
-    ガソリン代: theme.palette.expenseCategoryColor.ガソリン代,
+    農業経費: theme.palette.expenseCategoryColor.農業経費,
   };
 
   //カテゴリーごとに色分けする関数

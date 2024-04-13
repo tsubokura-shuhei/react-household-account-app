@@ -128,7 +128,7 @@ const CategoryChartYear = ({
             <MenuItem value={"保険類"}>保険類</MenuItem>
             <MenuItem value={"衣類"}>衣類</MenuItem>
             <MenuItem value={"光熱費"}>光熱費</MenuItem>
-            <MenuItem value={"ガソリン代"}>ガソリン代</MenuItem>
+            <MenuItem value={"農業経費"}>農業経費</MenuItem>
           </Select>
         </FormControl>
       </Box>
