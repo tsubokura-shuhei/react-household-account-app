@@ -16,6 +16,7 @@ import EnhancedEncryptionSharpIcon from "@mui/icons-material/EnhancedEncryptionS
 import CheckroomIcon from "@mui/icons-material/Checkroom";
 import TungstenIcon from "@mui/icons-material/Tungsten";
 import YardIcon from "@mui/icons-material/Yard";
+import TableRestaurantIcon from '@mui/icons-material/TableRestaurant';
 
 const IconComponents: Record<IncomeCategory | ExpenseCategory, JSX.Element> = {
   食費: <FastfoodIcon fontSize="small" />,
@@ -23,6 +24,7 @@ const IconComponents: Record<IncomeCategory | ExpenseCategory, JSX.Element> = {
   住居費: <AddHomeIcon fontSize="small" />,
   交際費: <Diversity3Icon fontSize="small" />,
   娯楽: <SportsTennisIcon fontSize="small" />,
+  雑貨: <TableRestaurantIcon fontSize="small" />,
   交通費: <TrainIcon fontSize="small" />,
   給与: <WorkIcon fontSize="small" />,
   副収入: <AddBusinessIcon fontSize="small" />,

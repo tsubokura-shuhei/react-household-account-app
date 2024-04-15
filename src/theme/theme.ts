@@ -67,11 +67,12 @@ export const theme = createTheme({
     },
     //支出カラー
     expenseCategoryColor: {
-      食費: deepOrange[500],
+      食費: deepOrange[600],
       日用品: lightGreen[500],
       住居費: amber[500],
       交際費: pink[300],
       娯楽: cyan[200],
+      雑貨: deepOrange[400],
       交通費: purple[400],
       医療費: lightGreen[300],
       化粧品: pink[200],

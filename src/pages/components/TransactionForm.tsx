@@ -40,6 +40,7 @@ import CheckroomIcon from "@mui/icons-material/Checkroom";
 import TungstenIcon from "@mui/icons-material/Tungsten";
 import EvStationIcon from "@mui/icons-material/EvStation";
 import YardIcon from "@mui/icons-material/Yard";
+import TableRestaurantIcon from '@mui/icons-material/TableRestaurant';
 
 interface transactionProps {
   onCloseForm: () => void;
@@ -90,6 +91,7 @@ const TransactionForm = ({
     { label: "住居費", icon: <AddHomeIcon fontSize="small" /> },
     { label: "交際費", icon: <Diversity3Icon fontSize="small" /> },
     { label: "娯楽", icon: <SportsTennisIcon fontSize="small" /> },
+    { label: "雑貨", icon: <TableRestaurantIcon fontSize="small" /> },
     { label: "交通費", icon: <TrainIcon fontSize="small" /> },
     { label: "医療費", icon: <MedicationIcon fontSize="small" /> },
     { label: "化粧品", icon: <AutoFixHighIcon fontSize="small" /> },
