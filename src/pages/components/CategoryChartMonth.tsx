@@ -121,6 +121,7 @@ const CategoryChartYear = ({
             <MenuItem value={"住居費"}>住居費</MenuItem>
             <MenuItem value={"交際費"}>交際費</MenuItem>
             <MenuItem value={"娯楽"}>娯楽</MenuItem>
+            <MenuItem value={"雑貨"}>雑貨</MenuItem>
             <MenuItem value={"交通費"}>交通費</MenuItem>
             <MenuItem value={"医療費"}>医療費</MenuItem>
             <MenuItem value={"化粧品"}>化粧品</MenuItem>
